@@ -13,13 +13,6 @@
   <nav class="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <div class="logo-mark">
-          <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-            <path d="M5 5 L5 35 Q5 38 8 38 L22 38 Q30 38 30 30 L30 22 Q30 14 22 14 L14 14 L14 5 Z" fill="#111"/>
-            <path d="M30 5 L30 22 Q30 30 38 30 L46 30 Q54 30 54 22 L54 14 Q54 6 46 6 L38 6 L38 5 Z" fill="none" stroke="#111" stroke-width="2.5"/>
-            <path d="M30 22 Q30 38 22 38 L8 38" fill="none" stroke="#111" stroke-width="2.5"/>
-          </svg>
-        </div>
         <div class="logo-text">
           <span class="logo-line1">Upcoming Conferences</span>
           <span class="logo-line2">in Bangladesh</span>
@@ -44,9 +37,7 @@
   <!-- HERO -->
   <header class="hero">
     <div class="hero-inner">
-      <p class="hero-eyebrow">/ curated listing /</p>
-      <h1 class="hero-title">Academic &amp;<br><em>Research Conferences</em></h1>
-      <p class="hero-sub">A curated list of upcoming international conferences relevant to researchers in Bangladesh.</p>
+      <p class="hero-sub">Your one stop destination for major conferences in Bangladesh.</p>
     </div>
     <div class="hero-rule"></div>
   </header>
@@ -57,144 +48,142 @@
       <input type="text" id="searchInput" class="search-input" placeholder="Search by name, location, or field…" oninput="filterTable()">
       <div class="filter-chips">
         <button class="chip active" onclick="filterByField('all', this)">All</button>
-        <button class="chip" onclick="filterByField('ML/AI', this)">ML / AI</button>
-        <button class="chip" onclick="filterByField('CS', this)">CS</button>
-        <button class="chip" onclick="filterByField('HCI', this)">HCI</button>
-        <button class="chip" onclick="filterByField('Bio', this)">Bio</button>
-        <button class="chip" onclick="filterByField('Eng', this)">Engineering</button>
+        <button class="chip" onclick="filterByField('IEEE', this)">IEEE</button>
+        <button class="chip" onclick="filterByField('ACM', this)">ACM</button>
+        <button class="chip" onclick="filterByField('Others', this)">Others</button>
       </div>
     </div>
   </section>
 
-  <!-- TABLE (desktop) -->
+  <!-- MAIN -->
   <main class="container">
-    <div class="table-note">
-      <span class="swipe-hint" id="swipeHint">← Swipe table left/right on mobile →</span>
-      <span class="count-label" id="countLabel"></span>
+
+    <!-- ===== IEEE ===== -->
+    <div class="org-section" data-org="IEEE">
+      <div class="org-header">
+        <span class="org-label">IEEE</span>
+        <span class="org-label-sub">Institute of Electrical and Electronics Engineers</span>
+      </div>
+      <div class="table-note">
+        <span class="swipe-hint">← Swipe left / right →</span>
+        <span class="count-label" id="countLabel-ieee"></span>
+      </div>
+      <div class="table-wrapper">
+        <table class="conf-table">
+          <thead><tr>
+            <th>Conference Name</th><th>Submission Deadline</th><th>Conf. Date</th><th>Venue</th><th>Location</th><th>Website</th>
+          </tr></thead>
+          <tbody class="tableBody" data-org="IEEE">
+            <tr data-org="IEEE">
+              <td class="conf-name">IEEE ICRA 2025<span class="conf-field-tag">Eng</span></td>
+              <td class="deadline-cell">Sep 15, 2024<span class="deadline-note">(check site for updates)</span></td>
+              <td>May 19–23, 2025</td><td>Georgia World Congress Center</td><td>Atlanta, USA</td>
+              <td><a href="https://2025.ieee-icra.org" target="_blank" class="conf-link">2025.ieee-icra.org ↗</a></td>
+            </tr>
+            <tr data-org="IEEE">
+              <td class="conf-name">IEEE CVPR 2025<span class="conf-field-tag">CS</span></td>
+              <td class="deadline-cell">Nov 14, 2024<span class="deadline-note">(check site for updates)</span></td>
+              <td>Jun 11–15, 2025</td><td>Music City Center</td><td>Nashville, USA</td>
+              <td><a href="https://cvpr.thecvf.com" target="_blank" class="conf-link">cvpr.thecvf.com ↗</a></td>
+            </tr>
+            <tr data-org="IEEE">
+              <td class="conf-name">IEEE ISCAS 2025<span class="conf-field-tag">Eng</span></td>
+              <td class="deadline-cell">Oct 21, 2024<span class="deadline-note">(check site for updates)</span></td>
+              <td>May 25–28, 2025</td><td>London ExCeL</td><td>London, UK</td>
+              <td><a href="https://iscas2025.org" target="_blank" class="conf-link">iscas2025.org ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-list" id="cardList-ieee"></div>
     </div>
 
-    <div class="table-wrapper" id="tableWrapper">
-      <table class="conf-table" id="confTable">
-        <thead>
-          <tr>
-            <th>Conference Name</th>
-            <th>Submission Deadline</th>
-            <th>Conf. Date</th>
-            <th>Venue</th>
-            <th>Location</th>
-            <th>Website</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-
-          <tr data-field="ML/AI">
-            <td class="conf-name">ICLR 2026<span class="conf-field-tag">ML/AI</span></td>
-            <td class="deadline-cell">
-              Oct 1, 2025
-              <span class="deadline-note">(check site for updates)</span>
-            </td>
-            <td>Apr 24 – May 2, 2026</td>
-            <td>Singapore EXPO</td>
-            <td>Singapore</td>
-            <td><a href="https://iclr.cc" target="_blank" class="conf-link">iclr.cc ↗</a></td>
-          </tr>
-
-          <tr data-field="ML/AI">
-            <td class="conf-name">NeurIPS 2025<span class="conf-field-tag">ML/AI</span></td>
-            <td class="deadline-cell">
-              May 15, 2025
-              <span class="deadline-note">(check site for updates)</span>
-            </td>
-            <td>Dec 9–15, 2025</td>
-            <td>Vancouver Convention Centre</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="https://neurips.cc" target="_blank" class="conf-link">neurips.cc ↗</a></td>
-          </tr>
-
-          <tr data-field="ML/AI">
-            <td class="conf-name">ICML 2025<span class="conf-field-tag">ML/AI</span></td>
-            <td class="deadline-cell">
-              Jan 23, 2025
-              <span class="deadline-note">(check site for updates)</span>
-            </td>
-            <td>Jul 13–19, 2025</td>
-            <td>Vancouver Convention Centre</td>
-            <td>Vancouver, Canada</td>
-            <td><a href="https://icml.cc" target="_blank" class="conf-link">icml.cc ↗</a></td>
-          </tr>
-
-          <tr data-field="CS">
-            <td class="conf-name">CVPR 2025<span class="conf-field-tag">CS</span></td>
-            <td class="deadline-cell">
-              Nov 14, 2024
-              <span class="deadline-note">(check site for updates)</span>
-            </td>
-            <td>Jun 11–15, 2025</td>
-            <td>Music City Center</td>
-            <td>Nashville, USA</td>
-            <td><a href="https://cvpr.thecvf.com" target="_blank" class="conf-link">cvpr.thecvf.com ↗</a></td>
-          </tr>
-
-          <tr data-field="HCI">
-            <td class="conf-name">CHI 2025<span class="conf-field-tag">HCI</span></td>
-            <td class="deadline-cell">
-              Sep 12, 2024
-              <span class="deadline-note">(check site for updates)</span>
-            </td>
-            <td>Apr 26 – May 1, 2025</td>
-            <td>Pacifico Yokohama</td>
-            <td>Yokohama, Japan</td>
-            <td><a href="https://chi2025.acm.org" target="_blank" class="conf-link">chi2025.acm.org ↗</a></td>
-          </tr>
-
-          <tr data-field="CS">
-            <td class="conf-name">ACL 2025<span class="conf-field-tag">CS</span></td>
-            <td class="deadline-cell">
-              Feb 15, 2025
-              <span class="deadline-note">(check site for updates)</span>
-            </td>
-            <td>Jul 27 – Aug 1, 2025</td>
-            <td>Austria Center Vienna</td>
-            <td>Vienna, Austria</td>
-            <td><a href="https://2025.aclweb.org" target="_blank" class="conf-link">2025.aclweb.org ↗</a></td>
-          </tr>
-
-          <tr data-field="Eng">
-            <td class="conf-name">IEEE ICRA 2025<span class="conf-field-tag">Eng</span></td>
-            <td class="deadline-cell">
-              Sep 15, 2024
-              <span class="deadline-note">(check site for updates)</span>
-            </td>
-            <td>May 19–23, 2025</td>
-            <td>Georgia World Congress Center</td>
-            <td>Atlanta, USA</td>
-            <td><a href="https://2025.ieee-icra.org" target="_blank" class="conf-link">2025.ieee-icra.org ↗</a></td>
-          </tr>
-
-          <tr data-field="Bio">
-            <td class="conf-name">ISMB 2025<span class="conf-field-tag">Bio</span></td>
-            <td class="deadline-cell">
-              Jan 14, 2025
-              <span class="deadline-note">(check site for updates)</span>
-            </td>
-            <td>Jul 11–15, 2025</td>
-            <td>ECCB Conference</td>
-            <td>Liverpool, UK</td>
-            <td><a href="https://www.iscb.org/ismb2025" target="_blank" class="conf-link">iscb.org/ismb2025 ↗</a></td>
-          </tr>
-
-        </tbody>
-      </table>
+    <!-- ===== ACM ===== -->
+    <div class="org-section" data-org="ACM">
+      <div class="org-header">
+        <span class="org-label">ACM</span>
+        <span class="org-label-sub">Association for Computing Machinery</span>
+      </div>
+      <div class="table-note">
+        <span class="swipe-hint">← Swipe left / right →</span>
+        <span class="count-label" id="countLabel-acm"></span>
+      </div>
+      <div class="table-wrapper">
+        <table class="conf-table">
+          <thead><tr>
+            <th>Conference Name</th><th>Submission Deadline</th><th>Conf. Date</th><th>Venue</th><th>Location</th><th>Website</th>
+          </tr></thead>
+          <tbody class="tableBody" data-org="ACM">
+            <tr data-org="ACM">
+              <td class="conf-name">ACM CHI 2025<span class="conf-field-tag">HCI</span></td>
+              <td class="deadline-cell">Sep 12, 2024<span class="deadline-note">(check site for updates)</span></td>
+              <td>Apr 26 – May 1, 2025</td><td>Pacifico Yokohama</td><td>Yokohama, Japan</td>
+              <td><a href="https://chi2025.acm.org" target="_blank" class="conf-link">chi2025.acm.org ↗</a></td>
+            </tr>
+            <tr data-org="ACM">
+              <td class="conf-name">ACM CCS 2025<span class="conf-field-tag">CS</span></td>
+              <td class="deadline-cell">Jan 14, 2025<span class="deadline-note">(check site for updates)</span></td>
+              <td>Oct 13–17, 2025</td><td>TBA</td><td>TBA</td>
+              <td><a href="https://www.sigsac.org/ccs/CCS2025" target="_blank" class="conf-link">sigsac.org/ccs ↗</a></td>
+            </tr>
+            <tr data-org="ACM">
+              <td class="conf-name">ACM SIGMOD 2025<span class="conf-field-tag">CS</span></td>
+              <td class="deadline-cell">Jul 12, 2024<span class="deadline-note">(check site for updates)</span></td>
+              <td>Jun 22–27, 2025</td><td>Berlin Congress Center</td><td>Berlin, Germany</td>
+              <td><a href="https://2025.sigmod.org" target="_blank" class="conf-link">2025.sigmod.org ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-list" id="cardList-acm"></div>
     </div>
 
-    <!-- MOBILE CARDS (auto-generated by JS) -->
-    <div class="card-list" id="cardList"></div>
+    <!-- ===== OTHERS ===== -->
+    <div class="org-section" data-org="Others">
+      <div class="org-header">
+        <span class="org-label">Others</span>
+        <span class="org-label-sub">Independent &amp; multi-society conferences</span>
+      </div>
+      <div class="table-note">
+        <span class="swipe-hint">← Swipe left / right →</span>
+        <span class="count-label" id="countLabel-others"></span>
+      </div>
+      <div class="table-wrapper">
+        <table class="conf-table">
+          <thead><tr>
+            <th>Conference Name</th><th>Submission Deadline</th><th>Conf. Date</th><th>Venue</th><th>Location</th><th>Website</th>
+          </tr></thead>
+          <tbody class="tableBody" data-org="Others">
+            <tr data-org="Others">
+              <td class="conf-name">ICLR 2026<span class="conf-field-tag">ML/AI</span></td>
+              <td class="deadline-cell">Oct 1, 2025<span class="deadline-note">(check site for updates)</span></td>
+              <td>Apr 24 – May 2, 2026</td><td>Singapore EXPO</td><td>Singapore</td>
+              <td><a href="https://iclr.cc" target="_blank" class="conf-link">iclr.cc ↗</a></td>
+            </tr>
+            <tr data-org="Others">
+              <td class="conf-name">NeurIPS 2025<span class="conf-field-tag">ML/AI</span></td>
+              <td class="deadline-cell">May 15, 2025<span class="deadline-note">(check site for updates)</span></td>
+              <td>Dec 9–15, 2025</td><td>Vancouver Convention Centre</td><td>Vancouver, Canada</td>
+              <td><a href="https://neurips.cc" target="_blank" class="conf-link">neurips.cc ↗</a></td>
+            </tr>
+            <tr data-org="Others">
+              <td class="conf-name">ISMB 2025<span class="conf-field-tag">Bio</span></td>
+              <td class="deadline-cell">Jan 14, 2025<span class="deadline-note">(check site for updates)</span></td>
+              <td>Jul 11–15, 2025</td><td>ECCB Conference</td><td>Liverpool, UK</td>
+              <td><a href="https://www.iscb.org/ismb2025" target="_blank" class="conf-link">iscb.org/ismb2025 ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-list" id="cardList-others"></div>
+    </div>
 
     <p class="no-results" id="noResults" style="display:none">No conferences match your search.</p>
 
     <div class="table-footer">
-      <p>All deadlines are subject to change. Always verify on the official conference website.</p>
+      <p><em>All deadlines are subject to change. Always verify on the official conference website.</em></p>
     </div>
+
   </main>
 
   <footer class="site-footer">
