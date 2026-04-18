@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Upcoming Conferences in Bangladesh</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+            <path d="M5 5 L5 35 Q5 38 8 38 L22 38 Q30 38 30 30 L30 22 Q30 14 22 14 L14 14 L14 5 Z" fill="#111"/>
+            <path d="M30 5 L30 22 Q30 30 38 30 L46 30 Q54 30 54 22 L54 14 Q54 6 46 6 L38 6 L38 5 Z" fill="none" stroke="#111" stroke-width="2.5"/>
+            <path d="M30 22 Q30 38 22 38 L8 38" fill="none" stroke="#111" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-line1">Upcoming Conferences</span>
+          <span class="logo-line2">in Bangladesh</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="hero-eyebrow">/ get in touch /</p>
+    <h1>Contact &amp; <em>Suggestions</em></h1>
+  </div>
+
+  <div class="hero-rule" style="max-width:1100px;margin:0 auto 48px;padding:0 24px;"></div>
+
+  <div class="page-body">
+    <p>Have a conference to suggest, found an error, or want to collaborate? Fill in the form below or reach out directly.</p>
+
+    <p style="font-family: var(--font-mono); font-size: 12px; color: var(--gray-500);">
+      Email: <a href="mailto:your@email.com" style="border-bottom:1px solid currentColor;">your@email.com</a>
+    </p>
+
+    <h2>Send a message</h2>
+
+    <!-- Note: this form uses Formspree (free). See instructions at the bottom of the page. -->
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label class="form-label" for="name">Your name</label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="Dr. Karim" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email address</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="karim@university.edu.bd" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="subject">Subject</label>
+        <input class="form-input" type="text" id="subject" name="subject" placeholder="Conference suggestion / correction / other">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Conference name, website, deadline…" required></textarea>
+      </div>
+      <button class="form-btn" type="submit">Send message →</button>
+    </form>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2025 Upcoming Conferences in Bangladesh</span>
+      <span class="footer-sep">·</span>
+      <a href="about.html">About</a>
+      <span class="footer-sep">·</span>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
